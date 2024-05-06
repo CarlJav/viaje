@@ -1,0 +1,124 @@
+/* Estilos para el formulario */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-left: 4em;
+  margin: 0;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 18px;
+  color: #000000;
+  text-align: justify;
+  background-color: #808B96;
+}
+
+ul.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 10;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 12em;
+  font-family: fantasy, sans-serif;
+  font-size: 19px;
+}
+
+ul.navbar li {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border-top: 1em solid black;
+  background: #FFFFFF;
+  color: blueviolet;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.form-register {
+  width: 95%;
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 7px;
+}
+
+.form__titulo {
+  background: #301CC5;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 30px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: 5px solid #DA6016;
+}
+
+.contenedor-inputs {
+  padding: 10px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+input,
+select {
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid darkgray;
+}
+
+.input-48 {
+  width: 48%;
+}
+
+.input-100 {
+  width: 100%;
+}
+
+.btn-enviar {
+  background: #DA6016;
+  color: #fff;
+  margin: auto;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn-enviar:active {
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.footer .texto-movimiento {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 8px;
+  animation: mover 3s infinite;
+  font-size: 35px;
+  color: #333333;
+}
+
+.seccion {
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .seccion {
+      width: 50%;
+  }
+}
+
+      

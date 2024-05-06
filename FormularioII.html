@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="inicio.html">Nuestra Empresa</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="horayprecio.html">Precios y Horario</a></li>
+        <li><a href="Formulario1.html">Formulario</a></li>
+        <li><a href="Formulario2.php">FormularioII</a></li>
+    </ul>
+    <h1>Formulario de registro</h1>
+    <form action="registrar.php" method="post" class="form-register" onsubmit="return validarFormulario();">
+        <h2 class="form__titulo">REGISTRO DE USUARIO</h2>
+        <div class="contenedor-inputs">
+            <input type="text" name="Nombre" id="nombre" placeholder="Nombre" class="input-48" required>
+            <input type="text" name="Apellidos" placeholder="Apellidos" class="input-48" required>
+            <input type="email" name="Correo" id="email" placeholder="Correo" class="input-100" required>
+            <input type="text" name="Usuario" placeholder="Usuario" class="input-48" required>
+            <input type="password" name="Clave" id="clave" placeholder="Contraseña" class="input-48" required>
+            <input type="text" name="Telefono" id="telefono" placeholder="Telefono" class="input-100" required>
+
+            <h4>Sexo</h4>
+            <p><input type="radio" name="sexo" value="Normal" required />Masculino</p>
+            <p><input type="radio" name="sexo" value="Doble piso" required />Femenino</p>
+
+            <div class="seccion">
+                <br>
+
+                <h4>Deporte Favorito</h4>
+                <p><input type="radio" name="asiento" value="Normal" required /> Futbol</p>
+                <p><input type="radio" name="asiento" value="Semi-cama" required /> Basquet</p>
+                <p><input type="radio" name="asiento" value="Cama" required /> Natacion</p>
+        
+                <div class="centrar-botones">
+                    <input type="submit" name="Registrar" class="btn-enviar">
+                </div>
+            </form>
+        
+            <form action="#" method="post">
+                <h4>Marca Preferida</h4>
+                <select name="lenguajes" id="lang">
+                    <option value="Santa Cruz">Nike</option>
+                    <option value="Tarija">Adidas</option>
+                    <option value="LaPaz">Puma</option>
+                    <option value="Potosi">Akita</option>
+                </select>
+        
+                <div class="centrar-botones">
+                    <input type="submit" name="Enviar" class="btn-enviar">
+                </div>
+            </form>
+                      <p class="form__link">¿TIENES UNA CUENTA? <a href="#">Ingresa aquí</a></p>
+</form>
+        </div>
+        
+
+        
+    </form>
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+   
+    <footer>
+        <p class="texto-movimiento">🌟🌟🌟🌟🌟Tenemos descuentos especiales para nuestros clientes más frecuentes🌟🌟🌟🌟🌟</p>
+    </footer>
+
+    <script>
+        function validarFormulario() {
+            const nombreInput = document.getElementById('nombre');
+            const correoInput = document.getElementById('correo');
+            const claveInput = document.getElementById('clave');
+            const telefonoInput = document.getElementById('telefono');
+
+            if (nombreInput.value === '') {
+                alert('Por favor, ingrese su nombre.');
+                return false;
+            }
+
+            if (!correoInput.checkValidity()) {
+                alert('Por favor, ingrese una dirección de correo electrónico válida.');
+                return false;
+            }
+
+            if (claveInput.value.length < 6) {
+                alert('La contraseña debe tener al menos 6 caracteres.');
+                return false;
+            }
+
+            if (telefonoInput.value === '') {
+                alert('Por favor, ingrese su número de teléfono.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

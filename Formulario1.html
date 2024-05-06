@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validaciones con Javascript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/estiloFormulario.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style type="text/css">
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 10vh;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+        .formulario {
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            color: black; /* Cambia este valor al color que desees */
+        }
+
+        .formulario label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .formulario input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .formulario input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .formulario input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .alert {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar"> 
+        <li><a href="inicio.html">Nuestra Empresa</a></li>
+        <li><a href="destino.html">Destinos</a></li>
+        <li><a href="horayprecio.html">Precios y Horario</a></li>
+        <li><a href="formulario1.html">Formulario</a></li>
+        <li><a href="Formulario2.php">FormularioII</a></li>
+    </ul>
+
+    <div class="container">
+        <h1>Validacion de formularios con jQuery</h1>
+        <hr/>
+        <div class="formulario">
+            <h2>Formulario de registros</h2>
+            <hr />
+        <form action="#" method="post" onsubmit="return ValidarFormulario()">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" name="nombre" id="nombre" required pattern="[A-Za-zÁáÉéÍíÓóÚúñÑ\s]+" title="Ingresa un nombre "><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" id="email" required title="Ingresa una dirección de correo electrónico"><br>
+
+    <label for="pass1">Password:</label><br>
+    <input type="password" name="pass1" id="pass1" required pattern=".{6,}" title="La contraseña debe tener al menos 6 caracteres."><br>
+
+    <label for="pass2">Confirmar:</label><br>
+    <input type="password" name="pass2" id="pass2" required pattern=".{6,}" title="La contraseña debe tener al menos 6 caracteres."><br>
+
+    <input type="submit" value="Enviar"><br>
+    <div id="alert" class="alert"></div>
+</form>
+            <script type="text/javascript">
+                function ValidarFormulario() {
+                    var nombre = document.getElementById('nombre').value;
+                    var email = document.getElementById('email').value;
+                    var pass1 = document.getElementById('pass1').value;
+                    var pass2 = document.getElementById('pass2').value;
+
+                    if (nombre === "") {
+                        alert('');
+                        return false;
+                    }
+
+                    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    if (!email.match(emailPattern)) {
+                        alert('');
+                        return false;
+                    }
+
+                    if (pass1 === "" || pass1.length < 6) {
+                        alert('');
+                        return false;
+                    }
+
+                    if (pass1 !== pass2) {
+                        alert('Las contraseñas no coinciden.');
+                        return false;
+                    }
+
+                    return true;
+                }
+            </script>
+        </div>
+        
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer>
+        <p class="texto-movimiento">🌟🌟🌟🌟🌟Tenemos descuentos especiales para nuestros clientes más frecuentes🌟🌟🌟🌟🌟</p>
+    </footer>
+    
+</body>
+</html>
